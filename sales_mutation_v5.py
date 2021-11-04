@@ -47,7 +47,7 @@ data_frames = [revenue_pv,order_pv,revenue_zak_pv,order_zak_pv]
 df_merged = reduce(lambda  left,right: pd.merge(left,right,on=['Purchase Date Day'], how='outer'), data_frames)
 
 #Change column name
-#df_merged.rename(columns={'Status':'Orders', 'Zakelijke_omzet_x':'Zakelijke_omzet','Zakelijke_omzet_y':'Order zakelijk'}, inplace=True)
+df_merged.rename(columns={'Status':'Orders', 'Zakelijke_omzet_x':'Zakelijke_omzet','Zakelijke_omzet_y':'Order zakelijk'}, inplace=True)
 df.sort_values(by=['Purchase Date Day'])
 
 #df_merged['Omzet'] = df['Omzet'].round(2)
